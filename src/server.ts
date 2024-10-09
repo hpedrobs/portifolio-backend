@@ -2,6 +2,7 @@
 import '@config/env'
 import messageRoutes from '@routes/messageRoutes'
 import os from 'os'
+import '@config/env'
 
 // external
 import express from 'express'
