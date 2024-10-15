@@ -10,8 +10,16 @@ import cors from 'cors'
 
 const app = express()
 const PORT = process.env.PORT ?? 3000
+const ORIGIN = process.env.ORIGIN ?? 'http://localhost:3000'
 
-app.use(cors()) 
+// Configurações do CORS
+const corsOptions = {
+    origin: ORIGIN,
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+    credentials: true
+}
+
+app.use(cors(corsOptions))
 app.use(express.json())
 
 // Rotas
